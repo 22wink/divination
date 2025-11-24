@@ -10,6 +10,17 @@
   <main class="card">
     <h1>九字小六壬速查工具</h1>
     <p class="sub">输入任意三个正整数，或直接按公历日期一键取数，迅速推演三传卦意。</p>
+    <section class="liuren-intro" aria-labelledby="liurenIntroTitle">
+      <div class="intro-head">
+        <h2 id="liurenIntroTitle">什么是小六壬？</h2>
+        <p>源自古代军旅行军用的九字口诀，以三传推断事情起伏，讲究“取象迅速、随手可算”。</p>
+      </div>
+      <ul class="liuren-points">
+        <li><strong>九字口诀</strong>：大安、留连、速喜、赤口、小吉、空亡、病符、桃花、天德，对应九种气象。</li>
+        <li><strong>三传节奏</strong>：以月、日、时或自设三数为初、中、末传，观察发展顺序与吉凶转折。</li>
+        <li><strong>快速判断</strong>：配合五行方位、应期与象意，可用于日常计划、沟通时机、项目推进等轻量决策。</li>
+      </ul>
+    </section>
     <form id="liuRenForm">
       <label>初传
         <input type="number" name="first" min="1" placeholder="正整数" required>
@@ -41,6 +52,73 @@
     <div class="error" id="errorMsg">请输入大于等于 1 的整数。</div>
     <section class="result-grid" id="resultGrid"></section>
     <article class="summary" id="summaryBox" hidden></article>
+    <section class="branch-guide" aria-labelledby="nineWordTitle">
+      <details id="nineWordPanel">
+        <summary>
+          <div class="branch-head">
+            <h2 id="nineWordTitle">九字口诀详解</h2>
+            <p>大安至天德依次循环，透过方位、五行与用事重点来读出最直观的提示。</p>
+          </div>
+          <span class="branch-hint">点击展开九字卡片</span>
+        </summary>
+        <div class="branch-grid">
+          <details class="branch-card">
+            <summary>
+              <h3>大安<span>木 · 正东 · 守稳为上</span></h3>
+            </summary>
+            <p>象征整体安稳、慢热累积，适合等待与打基础，重在长期耐心。</p>
+          </details>
+          <details class="branch-card">
+            <summary>
+              <h3>留连<span>木 · 西南 · 纠缠留客</span></h3>
+            </summary>
+            <p>表示局势反复、容易拖延，若想挽留关系则有利，否则要先理清界限。</p>
+          </details>
+          <details class="branch-card">
+            <summary>
+              <h3>速喜<span>火 · 正南 · 喜讯突至</span></h3>
+            </summary>
+            <p>带来惊喜与快节奏的突破，先行动后回顾，适合把握灵感或短期机会。</p>
+          </details>
+          <details class="branch-card">
+            <summary>
+              <h3>赤口<span>金 · 正西 · 口舌锋利</span></h3>
+            </summary>
+            <p>多口舌争执或意外冲突，凡事宜缓和语气，避免硬碰硬。</p>
+          </details>
+          <details class="branch-card">
+            <summary>
+              <h3>小吉<span>水 · 正北 · 启动试水</span></h3>
+            </summary>
+            <p>象征新局起步，“有但不多”，适合小规模测试或逐步扩张。</p>
+          </details>
+          <details class="branch-card">
+            <summary>
+              <h3>空亡<span>土 · 中宫 · 先得后失</span></h3>
+            </summary>
+            <p>提醒虚幻与落空，重心放在复盘与止损，不宜贸然追求物质收益。</p>
+          </details>
+          <details class="branch-card">
+            <summary>
+              <h3>病符<span>金 · 西南 · 调养修复</span></h3>
+            </summary>
+            <p>象征状态反复、需要诊治，专注休整、调整节奏，别硬撑。</p>
+          </details>
+          <details class="branch-card">
+            <summary>
+              <h3>桃花<span>土 · 东北 · 人事牵绊</span></h3>
+            </summary>
+            <p>情感与社交成关键，注意欲望牵引与关系界线，善用人脉。</p>
+          </details>
+          <details class="branch-card">
+            <summary>
+              <h3>天德<span>金 · 西北 · 贵人助力</span></h3>
+            </summary>
+            <p>代表权威、导师与贵人，当机立断请益或争取资源即可加速。</p>
+          </details>
+        </div>
+      </details>
+    </section>
     <section class="branch-guide" aria-labelledby="branchGuideTitle">
       <details id="branchGuidePanel">
         <summary>
