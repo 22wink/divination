@@ -9,6 +9,7 @@ export function initLunarHelper({
   firstInput,
   secondInput,
   thirdInput,
+  onSequenceApplied,
 }) {
   if (!dateInput || !timeInput || !applyButton || !previewEl) return;
 
@@ -39,6 +40,9 @@ export function initLunarHelper({
     firstInput.value = sequence.month;
     secondInput.value = sequence.day;
     thirdInput.value = sequence.branchIndex;
+    if (typeof onSequenceApplied === "function") {
+      onSequenceApplied();
+    }
   });
 }
 

@@ -23,6 +23,7 @@ initLunarHelper({
   firstInput,
   secondInput,
   thirdInput,
+  onSequenceApplied: handleAutoSubmit,
 });
 
 function initForm() {
@@ -56,5 +57,16 @@ function scrollToResults() {
       block: "start",
     });
   });
+}
+
+function handleAutoSubmit() {
+  if (!form) return;
+  if (typeof form.requestSubmit === "function") {
+    form.requestSubmit();
+    return;
+  }
+  // Fallback for older browsers
+  const submitEvent = new Event("submit", { bubbles: true, cancelable: true });
+  form.dispatchEvent(submitEvent);
 }
 
