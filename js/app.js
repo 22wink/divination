@@ -43,6 +43,18 @@ function initForm() {
     if (errorMsg) errorMsg.style.display = "none";
     const sequence = resolveSequence(steps);
     renderResult(sequence, grid, summaryBox);
+    scrollToResults();
+  });
+}
+
+function scrollToResults() {
+  if (!grid) return;
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  window.requestAnimationFrame(() => {
+    grid.scrollIntoView({
+      behavior: prefersReducedMotion ? "auto" : "smooth",
+      block: "start",
+    });
   });
 }
 
