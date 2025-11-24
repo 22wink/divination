@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>九字小六壬速查</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <main class="card">
+    <h1>九字小六壬速查工具</h1>
+    <p class="sub">输入任意三个正整数，或直接按公历日期一键取数，迅速推演三传卦意。</p>
+    <form id="liuRenForm">
+      <label>初传
+        <input type="number" name="first" min="1" placeholder="正整数" required>
+      </label>
+      <label>中传
+        <input type="number" name="second" min="1" placeholder="正整数" required>
+      </label>
+      <label>末传
+        <input type="number" name="third" min="1" placeholder="正整数" required>
+      </label>
+      <button type="submit">计算卦意</button>
+    </form>
+    <section class="calendar-helper" aria-labelledby="calendarHelperTitle">
+      <div class="helper-head">
+        <h2 id="calendarHelperTitle">公历日期一键取数</h2>
+        <p>选定当前公历日期与整点时间，自动转换为对应农历月、日与时辰序号，可直接填入三传。</p>
+      </div>
+      <div class="helper-controls">
+        <label>公历日期
+          <input type="date" id="solarDate">
+        </label>
+        <label>整点时间
+          <input type="time" id="solarTime" step="3600">
+        </label>
+        <button type="button" id="applyLunarBtn">填入农历顺序</button>
+      </div>
+      <p class="helper-preview" id="lunarPreview">选择日期与时间即可显示对应农历月日与时辰。</p>
+    </section>
+    <section class="branch-guide" aria-labelledby="branchGuideTitle">
+      <header>
+        <h2 id="branchGuideTitle">十二时辰对照</h2>
+        <p>传统以两个时辰为一昼夜，整点若落在交界则沿用前一段，例如 09:00 仍计入辰时，11:00 刚入午时。</p>
+      </header>
+      <div class="branch-grid">
+        <article class="branch-card">
+          <h3>子时<span>序 1 · 23:00 – 01:00</span></h3>
+          <p>北方水旺，宜静心筹谋，夜半阳气初生。</p>
+        </article>
+        <article class="branch-card">
+          <h3>丑时<span>序 2 · 01:00 – 03:00</span></h3>
+          <p>阴气最盛，适合养精蓄锐，筹划次日事务。</p>
+        </article>
+        <article class="branch-card">
+          <h3>寅时<span>序 3 · 03:00 – 05:00</span></h3>
+          <p>东方木升，黎明前的冲劲，新计划萌芽。</p>
+        </article>
+        <article class="branch-card">
+          <h3>卯时<span>序 4 · 05:00 – 07:00</span></h3>
+          <p>日出东方，适合行动启程，能量渐旺。</p>
+        </article>
+        <article class="branch-card">
+          <h3>辰时<span>序 5 · 07:00 – 09:00</span></h3>
+          <p>太阳抬头，沟通应酬最佳，九点前后仍属此段。</p>
+        </article>
+        <article class="branch-card">
+          <h3>巳时<span>序 6 · 09:00 – 11:00</span></h3>
+          <p>阳气冲盛，适合对外推进、签约或谈判。</p>
+        </article>
+        <article class="branch-card">
+          <h3>午时<span>序 7 · 11:00 – 13:00</span></h3>
+          <p>日正当中，静心调息，宜定夺重点事项。</p>
+        </article>
+        <article class="branch-card">
+          <h3>未时<span>序 8 · 13:00 – 15:00</span></h3>
+          <p>阳极转阴，适合复盘检视、整合资源。</p>
+        </article>
+        <article class="branch-card">
+          <h3>申时<span>序 9 · 15:00 – 17:00</span></h3>
+          <p>西方金气，沟通洽谈、收官收款皆宜。</p>
+        </article>
+        <article class="branch-card">
+          <h3>酉时<span>序 10 · 17:00 – 19:00</span></h3>
+          <p>暮色将临，宜收拢事务、安排社交。</p>
+        </article>
+        <article class="branch-card">
+          <h3>戌时<span>序 11 · 19:00 – 21:00</span></h3>
+          <p>夜色渐深，适合总结、温习、答复往来。</p>
+        </article>
+        <article class="branch-card">
+          <h3>亥时<span>序 12 · 21:00 – 23:00</span></h3>
+          <p>阴水再起，收心宁神，准备进入子时。</p>
+        </article>
+      </div>
+    </section>
+    <div class="error" id="errorMsg">请输入大于等于 1 的整数。</div>
+    <section class="result-grid" id="resultGrid"></section>
+    <article class="summary" id="summaryBox" hidden></article>
+    <p class="disclaimer">仅供传统术数兴趣研究，不做决策依据。</p>
+  </main>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
+
