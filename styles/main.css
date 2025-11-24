@@ -145,37 +145,92 @@ button:hover {
 }
 .branch-guide {
   margin-top: 32px;
-  padding: 32px 36px;
+}
+.branch-guide details {
   border-radius: 30px;
   border: 1px solid var(--stroke);
   background: rgba(255, 255, 255, 0.6);
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  display: block;
+  overflow: hidden;
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
 }
-.branch-guide header h2 {
+.branch-guide details[open] {
+  border-color: rgba(0, 113, 227, 0.3);
+  box-shadow: 0 30px 80px var(--shadow);
+}
+.branch-guide summary {
+  list-style: none;
+  padding: 32px 36px;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+.branch-guide summary::-webkit-details-marker {
+  display: none;
+}
+.branch-guide summary::after {
+  content: "+";
+  font-size: 2rem;
+  color: var(--muted);
+  line-height: 1;
+}
+.branch-guide details[open] summary::after {
+  content: "-";
+}
+.branch-head h2 {
   margin: 0;
   font-size: 1.35rem;
   font-weight: 600;
 }
-.branch-guide header p {
+.branch-head p {
   margin: 6px 0 0;
   color: var(--muted);
   font-size: 0.95rem;
+}
+.branch-hint {
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 500;
 }
 .branch-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   gap: 16px;
+  padding: 0 36px 32px;
 }
 .branch-card {
-  padding: 18px 20px;
   border-radius: 22px;
   border: 1px solid var(--stroke);
   background: rgba(255, 255, 255, 0.7);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.branch-card[open] {
+  border-color: rgba(0, 113, 227, 0.35);
+  box-shadow: 0 12px 30px rgba(0, 113, 227, 0.12);
+}
+.branch-card summary {
+  list-style: none;
+  padding: 18px 20px;
+  cursor: pointer;
   display: flex;
-  flex-direction: column;
-  gap: 6px;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+.branch-card summary::-webkit-details-marker {
+  display: none;
+}
+.branch-card summary::after {
+  content: "+";
+  font-size: 1.4rem;
+  color: var(--muted);
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+.branch-card[open] summary::after {
+  content: "-";
 }
 .branch-card h3 {
   margin: 0;
@@ -191,9 +246,11 @@ button:hover {
 }
 .branch-card p {
   margin: 0;
+  padding: 0 20px 20px;
   font-size: 0.92rem;
   color: var(--muted);
   line-height: 1.5;
+  border-top: 1px solid var(--stroke);
 }
 .helper-head h2 {
   margin: 0;
@@ -252,6 +309,16 @@ button:hover {
   }
   .calendar-helper button {
     width: 100%;
+  }
+  .branch-guide summary {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .branch-guide summary::after {
+    align-self: flex-start;
+  }
+  .branch-grid {
+    padding: 0 24px 24px;
   }
 }
 @media (prefers-color-scheme: dark) {
